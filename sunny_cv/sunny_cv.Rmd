@@ -1,7 +1,7 @@
 ---
 name: Sunny
 surname: Tseng
-position: "PhD Candidate"
+position: "Data Analyst, Infographic Designer"
 #pronouns: she/her
 address: "Vancouver, Canada"
 phone: +1 778-985-2258
@@ -19,7 +19,44 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
+library(tibble)
 ```
+
+
+
+
+# EDUCATION
+
+```{r}
+tribble(~ Degree, ~ Year, ~ Institution, ~ Where, ~ Additional,
+  "Natural Resources & Environmental Studies", "Jan. 2021 - present", "Ph.D, University of Northern British Columbia", "Prince George, Canada", list("Supervisory committee: Ken A. Otter, Heather Bryan, Joseph Shea, and Dexter Hodder", "Thesis: Broad-scaled avian biodiversity assessment with passive acoustic monitoring"),
+  
+  "Forest Resources Management", "Sep. 2017 - Nov. 2019", "Master of Science, University of British Columbia", "Vancouver, Canada", list("Supervisory committee: Bianca N.I. Eskelson, Kathy Martin, and Nicholas C. Coops", "Thesis: Innovative and conventional modelling for avian acoustic and fire severity analyses"),
+  
+  "Double major in Physics and Forestry & Resource Conservation", "Sep. 2012 - Jun. 2017", "Bachelor of Science, National Taiwan University", "Taipei, Taiwan", list("Supervisor: Shi-Wei Chu", "Thesis: High spatio-temporal-resolution detection of chlorophyll fluorescence dynamics from a single chloroplast", "Cumulative GPA: 3.65/4.0")
+  
+  ) %>%
+  detailed_entries(Degree, Year, Institution, Where, Additional)
+```
+
+# PUBLICATION
+
+## JOURNAL ARTICLES
+
+## POPULAR SCIENCE ARTICLES
+
+## CONFERENCE TALKS
+
+## CONFERENCE POSTERS
+
+
+
+# WORK EXPERIENCE
+
+# RECOGNITION
+
+
+\newpage
 
 # Some stuff about me
 
@@ -32,12 +69,12 @@ library(vitae)
 ```{r}
 library(tibble)
 tribble(
-  ~ Degree, ~ Year, ~ Institution, ~ Where,
-  "Informal studies", "1889-91", "Flying University", "Warsaw, Poland",
-  "Master of Physics", "1893", "Sorbonne Université", "Paris, France",
-  "Master of Mathematics", "1894", "Sorbonne Université", "Paris, France"
+  ~ Degree, ~ Year, ~ Institution, ~ Where, ~ Extra, 
+  "Informal studies", "1889-91", "Flying University", "Warsaw, Poland", "bla",
+  "Master of Physics", "1893", "Sorbonne Université", "Paris, France", "bla1",
+  "Master of Mathematics", "1894", "Sorbonne Université", "Paris, France", "bla2",
 ) %>%
-  detailed_entries(Degree, Year, Institution, Where)
+  detailed_entries(Degree, Year, Institution, Where, Extra)
 ```
 
 # Nobel Prizes
@@ -49,9 +86,9 @@ tribble(
   1911, "Chemistry", "Awarded for the discovery of radium and polonium"
 ) %>%
   brief_entries(
-    glue::glue("Nobel Prize in {Type}"),
-    Year,
-    Desc
+    with = glue::glue("Nobel Prize in {Type}"),
+    when = Year,
+    what = Desc
   )
 ```
 

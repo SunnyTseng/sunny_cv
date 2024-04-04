@@ -1,7 +1,7 @@
 ---
 name: Sunny
 surname: Tseng
-position: "Data Analyst, Infographic Designer"
+position: "Data analyst, Infographic designer"
 #pronouns: she/her
 address: "Vancouver, Canada"
 phone: +1 778-985-2258
@@ -33,7 +33,7 @@ tribble(~ Degree, ~ Year, ~ Institution, ~ Where, ~ Additional,
   
   "Forest Resources Management", "Sep. 2017 - Nov. 2019", "Master of Science, University of British Columbia", "Vancouver, Canada", list("Supervisory committee: Bianca N.I. Eskelson, Kathy Martin, and Nicholas C. Coops", "Thesis: Innovative and conventional modelling for avian acoustic and fire severity analyses"),
   
-  "Double major in Physics and Forestry & Resource Conservation", "Sep. 2012 - Jun. 2017", "Bachelor of Science, National Taiwan University", "Taipei, Taiwan", list("Supervisor: Shi-Wei Chu", "Thesis: High spatio-temporal-resolution detection of chlorophyll fluorescence dynamics from a single chloroplast", "Cumulative GPA: 3.65/4.0")
+  "Double major in Physics and Forestry & Resource Conservation", "Sep. 2012 - Jun. 2017", "Bachelor of Science, National Taiwan University", "Taipei, Taiwan", list("Supervisor: Shi-Wei Chu", "Thesis: High spatio-temporal-resolution detection of chlorophyll fluorescence dynamics from a single chloroplast", "Forestry GPA: 3.96/4.0; Physics GPA: 3.40/4.0; Cumulative GPA: 3.65/4.0")
   
   ) %>%
   detailed_entries(Degree, Year, Institution, Where, Additional)
@@ -44,6 +44,19 @@ tribble(~ Degree, ~ Year, ~ Institution, ~ Where, ~ Additional,
 ## JOURNAL ARTICLES
 
 ## POPULAR SCIENCE ARTICLES
+
+```{r}
+tribble(
+  ~ Year, ~ Title, ~ Journal,
+  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
+  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
+) %>%
+  brief_entries(
+    with = Type,
+    when = Year,
+    what = Desc
+  )
+```
 
 ## CONFERENCE TALKS
 
